@@ -245,10 +245,10 @@ cutoff = 10 # This can be determined by optimising the SNR and NIQE for a given 
                 #rangeOcut = range(0,200,5) # This for-loop can be used to generate 100 filtered dark-field signals for different cut-off parameter values, just place the next 21 lines of code into the for-loop.
                 #for cutoff in rangeOcut:
 
-i_dxDF = dxDF * (np.zeros((DFqr.shape),
+i_dyDF = dyDF * (np.zeros((DFqr.shape),
                           dtype=np.complex_) + 0 + 1j)  # (i) * derivative along rows of DF, has "0" in the real components, and "d(DF)/dx" in the complex
 
-insideft = dyDF + i_dxDF
+insideft = dxDF + i_dyDF
 insideftm = np.concatenate((insideft, np.flipud(insideft)), axis=0) # Mirroring the term inside the Fourier transform to enforce periodic boundary conditions
 ft_dx_idy = np.fft.fft2(insideftm)
 MP = midpass_2D(ft_dx_idy, cutoff, pixel_size)

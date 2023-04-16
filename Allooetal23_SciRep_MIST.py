@@ -241,7 +241,7 @@ dyDFim = Image.fromarray(dyDF).save(
 print('System of Linear Equations Solved')
 
 # Determing TRUE dark-field signal by filtering the solutions
-cutoff = 10 # This can be determined by optimising the SNR and NIQE for a given cut-off parameter value
+cutoff = 21 # This can be determined by optimising the SNR and NIQE for a given cut-off parameter value
                 #rangeOcut = range(0,200,5) # This for-loop can be used to generate 100 filtered dark-field signals for different cut-off parameter values, just place the next 21 lines of code into the for-loop.
                 #for cutoff in rangeOcut:
 
